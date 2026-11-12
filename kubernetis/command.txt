@@ -1,0 +1,33 @@
+//Docker
+
+docker build -t esec
+docker run -d --name c33 -p 9042:80 esec
+docker tag dockerimageid gowthamm5/image3:1.0(docker image nametobegiven on hub:1.0)
+docker push gowthamm5/image3:1.0
+docker pull anilkumarbh/clock:1.0
+docker run -d --name c20 -p 6070:80 anilkumarbh/clock:1.0
+
+
+//Kubernetes 
+
+docker build -t kuber33
+docker run -d --name c34 -p 8099:80 kuber33
+
+
+/* in docker->kubernetes->create cluster->kubeadm->create
+
+**after creating deployment.yml
+
+kubectl apply -f deployment.yml
+kubectl get deployments
+kubectl get pods
+
+**after creating service.yml
+
+kubectl apply -f service.yml 
+kubectl scale deployment image_name --replicas=5
+kubectl get deployments 
+kubectl get pods 
+kubectl delete pod pod_name 
+kubectl get endpoints image_name
+kubectl describe service image_name
